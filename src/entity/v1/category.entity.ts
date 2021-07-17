@@ -26,7 +26,6 @@ export class CategoryEntityV1 extends BaseEntity {
 
             let options = {};
 
-            //@ts-ignore
             let criteria = { status: Status.ACTIVE };
 
             return await this.aggregateMdb([

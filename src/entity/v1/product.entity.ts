@@ -2,6 +2,7 @@
 import { BaseEntity } from '../base.entity';
 import { brandEntityV1, categoryEntityV1 } from '../index';
 
+import { DEFAULT_LIMIT, DEFAULT_SKIP } from '../../config/constants';
 
 // global Variable used
 const Price = global.Price;
@@ -14,8 +15,8 @@ export class ProductEntityV1 extends BaseEntity {
 
     async getProducts(payload: IProductRequestV1.IGetProducts) {
         try {
-            let limit = 50;
-            let skip = payload.page > 0 && (payload.page - 1) * limit || 0;
+            let limit = DEFAULT_LIMIT;
+            let skip = payload.page > 0 && (payload.page - 1) * limit || DEFAULT_SKIP;
 
             let options = {
                 skip,
@@ -111,8 +112,8 @@ export class ProductEntityV1 extends BaseEntity {
 
     async getProductsWithCompleteData(payload: IProductRequestV1.IGetProducts) {
         try {
-            let limit = 50;
-            let skip = payload.page > 0 && (payload.page - 1) * limit || 0;
+            let limit = DEFAULT_LIMIT;
+            let skip = payload.page > 0 && (payload.page - 1) * limit || DEFAULT_SKIP;
 
             let options = {
                 skip,

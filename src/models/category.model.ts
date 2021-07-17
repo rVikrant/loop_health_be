@@ -10,7 +10,6 @@ const Status = global.Status;
 const CatSchema = new Schema({
     name: { type: String, required: true },
 
-    //@ts-ignore
     status: { type: String, enum: Status, default: Status.ACTIVE },
     createdAt: { type: Number, default: Date.now() },
 });
