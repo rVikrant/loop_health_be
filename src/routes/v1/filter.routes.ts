@@ -31,7 +31,7 @@ export default (router: Router) => {
     )
     .get('/',
         ...getMiddleware([
-            "basic_auth"
+            // "basic_auth"
         ]),
         validate({
             query: {}

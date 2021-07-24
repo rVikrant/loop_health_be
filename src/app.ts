@@ -27,7 +27,7 @@ export const start = (async () => {
       await bootstrap(server);
 
       //@ts-ignore
-      console.log("running on port", port, JSON.stringify(Price), JSON.stringify(Gender));
+      console.log("running on port", port);
   
     } catch (error) {
       console.error(error)

@@ -10,4 +10,4 @@
       "experimentalDecorators": true,
     },
     "include": ["./src/**/*"]
-  }
+}

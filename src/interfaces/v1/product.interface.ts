@@ -3,7 +3,8 @@ declare namespace IProductRequestV1 {
         page?: number;
         sortBy?: string;
         search?: string;
-        brand?: string;
-        category?: string;
+        brands?: string[];
+        gender?: string[];
+        categories?: string[];
     }
 }

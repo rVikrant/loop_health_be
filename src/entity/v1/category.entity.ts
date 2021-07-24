@@ -37,6 +37,7 @@ export class CategoryEntityV1 extends BaseEntity {
                         foreignField: "category",
                         as: "products"
                 }},
+                {$unwind: "$products"},
                 {
                     $group: {
                         _id: "$name",

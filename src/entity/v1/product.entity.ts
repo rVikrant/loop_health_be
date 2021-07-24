@@ -28,17 +28,21 @@ export class ProductEntityV1 extends BaseEntity {
                 status: Status.ACTIVE
             };
 
-            if (payload.brand) {
-                criteria.brand = payload.brand;
+            if (payload.brands && payload.brands.length) {
+                criteria.brand = {$in: payload.brands};
             }
 
-            if (payload.category) {
-                criteria.category = payload.category;
+            if (payload.categories && payload.categories.length) {
+                criteria.category ={$in: payload.categories};
             }
 
-            if (payload.search) {
-                criteria.productName = new RegExp(payload.search, 'i');
+            if (payload.gender) {
+                criteria.gender = payload.gender;
             }
+
+            // if (payload.search) {
+            //     criteria.productName = new RegExp(payload.search, 'i');
+            // }
 
             // if multiply sort options and order is different as aesc or desc then use switch 
             if (payload.sortBy) {
@@ -125,15 +129,8 @@ export class ProductEntityV1 extends BaseEntity {
                 status: Status.ACTIVE
             };
 
-            if (payload.brand) {
-                criteria.brand = payload.brand;
-            }
-
-            if (payload.category) {
-                criteria.category = payload.category;
-            }
-
             if (payload.search) {
+                // criteria.productName = {$regex: payload.search, $options: 'i'};
                 criteria.productName = new RegExp(payload.search, 'i');
             }
 
